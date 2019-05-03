@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
+}
+
+
+group 'parser'
+version '1.0-SNAPSHOT'
+
+
+// Include the Spring Boot plugin
+// Include the Spring Boot plugin
+
+
+// Specify the location where our dependencies will be found
+repositories {
+    mavenCentral()
+}
+
+// Specify dependencies
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:1.2.6.RELEASE'
+    compile 'org.thymeleaf.extras:thymeleaf-extras-java8time:2.1.0.RELEASE'
+}

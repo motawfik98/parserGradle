@@ -1,0 +1,58 @@
+nterms : inId
+:= : Special Character
+10 : inNum
+; : Special Character
+none : inId
+:= : Special Character
+0 : inNum
+; : Special Character
+ntwo : inId
+:= : Special Character
+1 : inNum
+; : Special Character
+count : inId
+:= : Special Character
+0 : inNum
+; : Special Character
+if : Reserved Word
+( : Special Character
+nterms : inId
+= : Special Character
+1 : inNum
+) : Special Character
+then : Reserved Word
+write : Reserved Word
+( : Special Character
+none : inId
+) : Special Character
+; : Special Character
+else : Reserved Word
+repeat : Reserved Word
+write : Reserved Word
+none : inId
+; : Special Character
+nth : inId
+:= : Special Character
+none : inId
++ : Special Character
+ntwo : inId
+; : Special Character
+none : inId
+:= : Special Character
+ntwo : inId
+; : Special Character
+ntwo : inId
+:= : Special Character
+nth : inId
+; : Special Character
+count : inId
+:= : Special Character
+count : inId
++ : Special Character
+1 : inNum
+; : Special Character
+until : Reserved Word
+count : inId
+= : Special Character
+nterms : inId
+end : Reserved Word

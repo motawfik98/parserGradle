@@ -1,0 +1,19 @@
+			{bla bla bla }
+nterms := 10;
+none:= 0;
+ntwo :=1;
+count:=0;
+if (nterms= 1) then
+	write ( none);
+
+else
+	repeat
+
+ write none;
+nth := none+ ntwo;
+none := ntwo 	;
+ntwo:= nth ;
+count:=count+1;
+	until count = nterms
+end
+{bla bla bla }

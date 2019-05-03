@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" th:href="@{Treant.css}" type="text/css"/>
+</head>
+<body>
+<div id="tree-simple">Tree</div>
+<!-- javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js"
+        integrity="sha256-MPXjTSEImVJI1834JAHubdK7Lts1VTUPJmCQ9zKAjyA="
+        crossorigin="anonymous"></script>
+<script th:src="@{Treant.js}"></script>
+<script>
+
+    let root = null;
+
+    function addNameClass(data) {
+
+    }
+
+    $.get("/getParseTree", function (data) {
+        addNameClass(data);
+
+
+        root = data;
+        console.log(root);
+
+        simple_chart_config = {
+            chart: {
+                container: "#tree-simple"
+            },
+            nodeStructure: root
+
+        };
+        console.log(root);
+        const my_chart = new Treant(simple_chart_config);
+    });
+
+</script>
+</body>
+</html>
