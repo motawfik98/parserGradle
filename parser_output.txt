@@ -2,37 +2,3 @@ program is Found
 stmt-seq is Found
 assignStmt is Found
 exp is Found
-assignStmt is Found
-exp is Found
-assignStmt is Found
-exp is Found
-assignStmt is Found
-exp is Found
-ifStmt is Found
-if
-exp is Found
-then
-stmt-seq is Found
-writeStmt is Found
-write
-exp is Found
-exp is Found
-else
-stmt-seq is Found
-repeatStmt is Found
-repeat
-stmt-seq is Found
-writeStmt is Found
-write
-exp is Found
-assignStmt is Found
-exp is Found
-assignStmt is Found
-exp is Found
-assignStmt is Found
-exp is Found
-assignStmt is Found
-exp is Found
-until
-exp is Found
-end

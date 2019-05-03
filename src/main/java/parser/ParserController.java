@@ -12,10 +12,8 @@ public class ParserController {
 
     @RequestMapping("/")
     public ModelAndView showPage() {
-        if(parser == null) {
-            TinyScanner tinyScanner = new TinyScanner();
-            parser = new Parser(tinyScanner.getTokenList());
-        }
+        TinyScanner tinyScanner = new TinyScanner();
+        parser = new Parser(tinyScanner.getTokenList());
 
         return new ModelAndView("index");
     }

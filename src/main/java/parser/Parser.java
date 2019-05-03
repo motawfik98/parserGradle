@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class Parser {
-    public static int index = 0;
+    private int index = 0;
     private ArrayList<Token> tokenList;
     private Node root = null, currentNode = null;
     private Stack<Node> previousNodes = new Stack<>(); // to store the parent
@@ -201,27 +201,16 @@ public class Parser {
 
     private void exp() {
         System.out.println("exp is Found");
-        Node exp = new Node("exp");
-        currentNode = previousNodes.peek();
-        currentNode.addChild(exp);
-        previousNodes.push(exp);
         simpleExp();
         while (tokenList.get(index).getValue().equals("<") ||
                 tokenList.get(index).getValue().equals("=")) {
             compOp();
             simpleExp();
         }
-        previousNodes.pop();
     }
 
     private void compOp() {
-        Node plusMinus = new Node("=<");
-        currentNode = previousNodes.peek();
-        Node deleted = currentNode.deleteChild();
-        currentNode.addChild(plusMinus);
-        plusMinus.addChild(deleted);
-        previousNodes.push(plusMinus);
-        yoyo=true;
+        changeChildrenOrder();
         if (tokenList.get(index).getValue().equals("=")) {
             try {
                 matchValue(new Token("="));
@@ -253,13 +242,7 @@ public class Parser {
     private void addOp() {
         try {
 
-            Node plusMinus = new Node("+-");
-            currentNode = previousNodes.peek();
-            Node deleted = currentNode.deleteChild();
-            currentNode.addChild(plusMinus);
-            plusMinus.addChild(deleted);
-            previousNodes.push(plusMinus);
-            yoyo=true;
+            changeChildrenOrder();
             if (tokenList.get(index).getValue().equals("+"))
                 matchValue(new Token("+"));
             else if (tokenList.get(index).getValue().equals("-"))
@@ -282,13 +265,7 @@ public class Parser {
 
     private void mulOp() {
         try {
-            Node plusMinus = new Node("/*");
-            currentNode = previousNodes.peek();
-            Node deleted = currentNode.deleteChild();
-            currentNode.addChild(plusMinus);
-            plusMinus.addChild(deleted);
-            previousNodes.push(plusMinus);
-            yoyo=true;
+            changeChildrenOrder();
             if (tokenList.get(index).getValue().equals("*"))
                 matchValue(new Token("*"));
             else if (tokenList.get(index).getValue().equals("/"))
@@ -299,6 +276,16 @@ public class Parser {
             e.printExpectedToken();
         }
 
+    }
+
+    private void changeChildrenOrder() {
+        Node plusMinus = new Node(tokenList.get(index).getValue());
+        currentNode = previousNodes.peek();
+        Node deleted = currentNode.deleteChild();
+        currentNode.addChild(plusMinus);
+        plusMinus.addChild(deleted);
+        previousNodes.push(plusMinus);
+        yoyo = true;
     }
 
     private void factor() {
