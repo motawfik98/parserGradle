@@ -1,1 +1,22 @@
-x := 1 / 2;
+{ Sample program in TINY language – computes factorial
+    }
+     read x;   {input an integer }
+     if  (0 < x)   then     {  don’t compute if x <= 0 }
+        fact  := 1 + 2 - 3 + 4;
+        repeat
+           fact  := fact *  x;
+            x  := x  -  1;
+            repeat
+                r := 12;
+                if (z = 6) then
+                    read hello;
+                    write hello
+                end
+            until y = 15;
+            if (hello = 20) then
+                read y;
+                y := 1 / 2
+            end
+        until  x  =  0;
+        write  fact   {  output  factorial of x }
+     end

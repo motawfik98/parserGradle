@@ -1,4 +1,52 @@
 program is Found
 stmt-seq is Found
+readStmt is Found
+read
+ifStmt is Found
+if
+exp is Found
+then
+stmt-seq is Found
 assignStmt is Found
 exp is Found
+repeatStmt is Found
+repeat
+stmt-seq is Found
+assignStmt is Found
+exp is Found
+assignStmt is Found
+exp is Found
+repeatStmt is Found
+repeat
+stmt-seq is Found
+assignStmt is Found
+exp is Found
+ifStmt is Found
+if
+exp is Found
+then
+stmt-seq is Found
+readStmt is Found
+read
+writeStmt is Found
+write
+exp is Found
+end
+until
+exp is Found
+ifStmt is Found
+if
+exp is Found
+then
+stmt-seq is Found
+readStmt is Found
+read
+assignStmt is Found
+exp is Found
+end
+until
+exp is Found
+writeStmt is Found
+write
+exp is Found
+end
